@@ -2,16 +2,15 @@ n = int(input())
 stack = []
 for _ in range(n):
     command = input()
-    if command == '2':
-        if len(stack) > 0:
+    if command == '2' and stack:
             stack.pop()
     elif command.startswith('1 '):
         data = command.split(' ')
         number = int(data[1])
         stack.append(number)
-    elif command == '3':
+    elif command == '3' and stack:
         print(max(stack))
-    elif command == '4':
+    elif command == '4' and stack:
         print(min(stack))
 stack.reverse()
 print(', '.join(map(str, stack)))
