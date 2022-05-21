@@ -1,6 +1,7 @@
 clothes_box = input()
 rack_capacity = int(input())
-clothes_stack = [int(ch) for ch in clothes_box if ch != ' ']
+#clothes_stack = [int(ch) for ch in clothes_box if ch != ' ']
+clothes_stack = [int(ch) for ch in clothes_box.split(' ')]
 rack_number = 1
 rack = []
 
