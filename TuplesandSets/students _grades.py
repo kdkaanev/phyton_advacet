@@ -12,4 +12,4 @@ for _ in range(students_number):
     students_dict[name].append(float(grade))
 
 for key, value in students_dict.items():
-    print(f'{key}, {" ".join(map(str, value))} (avg: {average(value):.2f})')
+    print(f'{key} -> {" ".join(map(str, value))} (avg: {average(value):.2f})')
