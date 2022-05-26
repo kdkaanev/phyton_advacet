@@ -5,7 +5,6 @@ orders = input().split(' ')
 queue = deque([int(o) for o in orders])
 max_order = max(queue)
 print(max_order)
-stop = False
 while queue:
     order = queue.popleft()
     if order <= food_quantity:
