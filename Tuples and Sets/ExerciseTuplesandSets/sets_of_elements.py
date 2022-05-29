@@ -5,10 +5,13 @@ n_set = set()
 m_set = set()
 
 for _ in range(n):
-    number = input()
-    n_set.add(number)
+    n_set.add(input())
+    #number = input()
+    #n_set.add(number)
+
 for _ in range(m):
-    number = input()
-    m_set.add(number)
+    m_set.add(input())
+    #number = input()
+    #m_set.add(number)
 new_set = n_set.intersection(m_set)
 [print(num) for num in new_set]
