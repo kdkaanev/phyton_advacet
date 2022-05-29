@@ -1,10 +1,12 @@
 def output(even, odd):
-    if sum(even) == sum(odd):
-        value = even.union(odd)
-    elif sum(even) > sum(odd):
-        value = even.symmetric_difference(odd)
+    sum_even = sum(even)
+    sum_odd =  sum(odd)
+    if sum_even == sum_odd:
+        value = odd.union(even)
+    elif sum_even >sum_odd:
+        value = odd.symmetric_difference(even)
     else:
-        value = even.difference(odd)
+        value = odd.difference(even)
     return value
 
 n = int(input())
@@ -23,6 +25,4 @@ for row in range(1, n + 1):
         odd_set.add(result)
 
 final = output(even_set, odd_set)
-print_list = [str(num) for num in final]
-print(', '.join(print_list))
-
+print(*final, sep=', ')
