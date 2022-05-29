@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef640eda-a7b7-4de7-8fe6-f4cf4c9865c3" name="Changes" comment="names">
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/ListsAsStacksAndQueues.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ListsAsStacksAndQueues/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/count_same_values.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking_lot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/record_unique_names.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/softUni_party.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/students _grades.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StacksQueuesTuplesAndSetsExercise/numbers.1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StacksQueuesTuplesAndSetsExercise/numbers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lsq_exercist/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lsq_exercist/numbers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/piton/phytonAdvanced/phyton_advacet/Tuples and Sets"
   }
-}</component>
-  <component name="RunManager" selected="Python.softUni_party">
+}]]></component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="count_same_values" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TuplesandSets" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,16 +287,5 @@
     <MESSAGE value="final" />
     <MESSAGE value="names" />
     <option name="LAST_COMMIT_MESSAGE" value="names" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

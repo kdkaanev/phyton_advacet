@@ -35,6 +35,9 @@ while True:
         last_car = command
     command = input()
 if is_crash:
-    print(f"A crash happened!{last_car} was hit at {last_car[index]} .")
+    print(f"A crash happened!")
+    print(f"{last_car} was hit at {last_car[index]}.")
 else:
-    print(f"Everyone is safe.{passed} total cars passed the crossroads.")
+    print(f"Everyone is safe.")
+    print(f"{passed} total cars passed the crossroads.")
+
