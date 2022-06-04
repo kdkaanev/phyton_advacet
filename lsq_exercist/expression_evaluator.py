@@ -1,31 +1,22 @@
 from collections import deque
 
+expresion = input().split()
+integers = deque()
+operators = {
+    '*': lambda a, b: a * b,
+    '+': lambda a, b: a + b,
+    '-': lambda a, b: a - b,
+    '/': lambda a, b: a // b,
 
-def operation(ex, op):
-    if op == '*':
-        value = 1
-        while ex:
+}
 
-            value *= int(ex.popleft())
-        ex = ex.append(value)
-
-    elif op == '+':
-        pass
-    elif op == '-':
-        pass
-    elif op == '/':
-        pass
-    return ex
-
-
-string_expression = '6 3 * 2 1 * 5 /'
-list_expression = string_expression.split(' ')
-operators = ["*", "+", "-", "/"]
-expression = deque()
-
-for symbol in list_expression:
-    if symbol not in operators:
-        expression.append(symbol)
+for symbol in expresion:
+    if symbol in '*+-/':
+        while len(integers) > 1:
+            left = integers.popleft()
+            right = integers.popleft()
+            result = operators[symbol](left, right)
+            integers.appendleft(result)
     else:
-        expression.(operation(expression, symbol))
-print()
+        integers.append(int(symbol))
+[print(x) for x in integers]
