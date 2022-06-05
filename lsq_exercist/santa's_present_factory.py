@@ -14,16 +14,19 @@ toy = {
 while materials and magics:
     material = materials.pop()
     magic = magics.popleft()
+    if magic == 0 and material == 0:
+        continue
     if magic == 0:
         materials.append(material)
         continue
     if material == 0:
-        magics.append(magic)
+        magics.appendleft(magic)
         continue
     x = material * magic
     if x in toy.keys():
         toy[x][1] += 1
-    elif x < 0:
+        continue
+    if x < 0:
         result = material + magic
         materials.append(result)
     else:
