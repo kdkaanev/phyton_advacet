@@ -2,9 +2,9 @@ from collections import deque
 
 symbol = {
     '+': lambda a, b: a + b,
-    '-': lambda a, b: abs(a - b),
+    '-': lambda a, b: a - b,
     '*': lambda a, b: a * b,
-    '/': lambda a, b: a // b
+    '/': lambda a, b: a / b
 }
 
 bees = deque([int(x) for x in input().split()])
@@ -15,10 +15,13 @@ honey = 0
 while bees and total_nectar:
     bee = bees.popleft()
     nectar = total_nectar.pop()
-    while bee >= nectar:
-        nectar = total_nectar.pop()
+    if nectar < bee:
+        bees.appendleft(bee)
+        continue
+    if nectar == 0:
+        continue
     current_symbol = symbols_sequence.popleft()
-    honey += symbol[current_symbol](bee, nectar)
+    honey += abs(symbol[current_symbol](bee, nectar))
 
 print(f"Total honey made: {honey}")
 if bees:
