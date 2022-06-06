@@ -1,22 +1,3 @@
-import sys
-from io import StringIO
-test_input1 = '''3
-ABC
-DEF
-X!@
-!
-
-'''
-test_input2 = '''4
-asdd
-xczc
-qwee
-qefw
-4
-
-'''
-#sys.stdin = StringIO(test_input1)
-sys.stdin = StringIO(test_input2)
 
 n = int(input())
 matrix = [[st for st in input()] for row in range(n)]
