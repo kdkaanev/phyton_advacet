@@ -13,20 +13,21 @@ while command != "End":
         with open(f'./{file_name}', 'a') as file:
             file.write(content + '/n')
     elif action == 'Replace':
-        old_string, new_string = info[2], info[3]
-        try:
+        if not  exists(f'./{file_name}'):
+            print('An error occurred')
+        else:
+            old_string, new_string = info[2], info[3]
             with open(f'./{file_name}', 'r+') as file:
                 text = file.read()
                 text = text.replace(old_string, new_string)
                 file.seek(0)
                 file.truncate()
                 file.write(text)
-        except:
-            print('An error occurred')
     elif action == 'Delete':
-        try:
-            remove(file_name)
-        except :
+        if not exists(f'./{file_name}'):
             print('An error occurred')
+        else:
+            remove(file_name)
+
 
     command = input()
