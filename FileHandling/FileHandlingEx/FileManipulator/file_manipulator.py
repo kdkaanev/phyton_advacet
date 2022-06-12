@@ -7,24 +7,26 @@ while command != "End":
     action, file_name = info[0], info[1]
     if action == 'Create':
         with open(f'./{file_name}', 'w') as file:
-            file.write('')
+            pass
     elif action == 'Add':
         content = info[2]
         with open(f'./{file_name}', 'a') as file:
-            file.write(f'{content},/n')
+            file.write(content + '/n')
     elif action == 'Replace':
         old_string, new_string = info[2], info[3]
-        with open(f'./{file_name}', 'w') as file:
-            if exists(file_name):
-                for line in file:
-                    line.replace(old_string, new_string)
-            else:
-                print('An error occurred')
+        try:
+            with open(f'./{file_name}', 'r+') as file:
+                text = file.read()
+                text = text.replace(old_string, new_string)
+                file.seek(0)
+                file.truncate()
+                file.write(text)
+        except:
+            print('An error occurred')
     elif action == 'Delete':
-        if exists(file_name):
+        try:
             remove(file_name)
-        else:
+        except :
             print('An error occurred')
 
     command = input()
-print()
