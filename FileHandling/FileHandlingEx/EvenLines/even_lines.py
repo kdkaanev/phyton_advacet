@@ -1,5 +1,6 @@
 symbols = ["-", ",", ".", "!", "?"]
 even_lines = []
+
 reading_file = open('text.txt', 'r')
 
 for index, lines in enumerate(reading_file):
@@ -9,3 +10,4 @@ for index, lines in enumerate(reading_file):
             if symbol in line:
                 line = line.replace(symbol, '@')
         print(line)
+reading_file.close()
