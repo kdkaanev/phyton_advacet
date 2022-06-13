@@ -2,7 +2,7 @@ rows, columns = [int(x) for x in input().split()]
 matrix = [[int(x) for x in input().split()] for row in range(rows)]
 
 top_matrix = []
-max_points = 0
+max_points = float('-inf')
 
 for row in range(rows - 2):
     for column in range(columns - 2):
