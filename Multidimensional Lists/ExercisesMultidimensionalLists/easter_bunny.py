@@ -1,30 +1,3 @@
-import sys
-from io import StringIO
-
-test_input1 = '''5
-1 3 7 9 11
-X 5 4 X 63
-7 3 21 95 1
-B 1 73 4 9
-9 2 33 2 0
-
-'''
-test_input2 = '''8
-4 18 9 7 24 41 52 11
-54 21 19 X 6 34 75 57
-76 67 7 44 76 27 56 37
-92 35 25 37 52 34 56 72
-35 X 1 45 4 X 37 63
-105 X B 2 12 43 5 19
-48 19 35 20 32 27 42 4
-73 88 78 32 37 52 X 22
-'''
-
-# sys.stdin = StringIO(test_input1)
-
-
-sys.stdin = StringIO(test_input2)
-
 
 def bunny(field, n):
     for row in range(n):
@@ -83,7 +56,7 @@ def right(r, c, n, field):
 def best_way(u, d, l, r):
     best_direction = ''
     best_route = []
-    best_point = 0
+    best_point = float('-inf')
     all_dict = {
         u[0]: [u[1], u[2]],
         d[0]: [d[1], d[2]],
