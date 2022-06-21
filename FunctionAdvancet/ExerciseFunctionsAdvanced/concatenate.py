@@ -1,10 +1,5 @@
 def concatenate(*args, **kwargs):
-    def string(*args):
-        text = ''
-        for word in args:
-            text += word
-        return text
-    text = string(*args)
+    text = ''.join(args)
     for key, value in kwargs.items():
         if key in text:
             text = text.replace(key, value)
