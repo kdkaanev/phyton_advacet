@@ -15,7 +15,12 @@ def shopping_cart(*args):
 
     for k, v in cart.items():
         cart[k].sort()
-
+    result = ''
+    for key,value in sorted(cart.items(),key=lambda x: (-len(x[1]), x[0])):
+        result += f'{key}:\n'
+        for value_type in sorted(value):
+            result += f'-{value_type}\n'
+    return result.strip()
 
 print(shopping_cart(
     ('Pizza', 'ham'),
