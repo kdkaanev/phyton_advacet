@@ -1,0 +1,27 @@
+eggs = [int(x) for x in input().split(', ')]
+papers = [int(x) for x in input().split(', ')]
+boxes = 0
+
+while eggs and papers:
+    
+    egg = eggs.pop(0)
+    if egg <= 0:
+        continue
+    paper = papers.pop()
+    if egg == 13:
+        first = papers.pop(0)
+        papers.insert(0, paper)
+        papers.append(first)
+        continue
+        
+    
+    if paper + egg <= 50:
+        boxes += 1
+if boxes > 0:
+    print(f"Great! You filled {boxes} boxes.")
+else:
+    print("Sorry! You couldn't fill any boxes!")
+if eggs:
+    print(f"Eggs left: {*eggs},sep= ', '}")
+if papers:
+    print(f"Pieces of paper left: {*papers} sep= ', '")
