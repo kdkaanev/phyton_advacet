@@ -3,19 +3,18 @@ car_number = input()
 race_route = [[x for x in input().split(' ')] for r in range(n)]
 end = False
 distance = 0
-coor = 0, 0
-def coordinate(command, r, c):
+car_row, car_col = 0, 0
 
 
-    if command == 'left':
-        c -= 1
-    elif command == 'right':
-        c += 1
-    elif command == 'up':
-        r -= 1
-    elif command == 'down':
-        r += 1
-    return r, c
+def coordinate(direction, car_row, car_col):
+    if direction == 'left':
+        return car_row, car_col - 1
+    elif direction == 'right':
+        return car_row, car_col + 1
+    elif direction == 'up':
+        return car_row - 1, car_col
+    elif direction == 'down':
+        return car_row + 1, car_col
 
 
 def tunel(matrix, num):
@@ -23,8 +22,12 @@ def tunel(matrix, num):
         for coll in range(num):
             if matrix[row][coll] == 'T':
                 matrix[row][coll] = '.'
+                break
+        else:
+            continue
+        break
 
-
+    return row, coll
 
 
 while True:
@@ -32,21 +35,25 @@ while True:
     order = input()
     if order == 'End':
         end = True
+        race_route[car_row][car_col] = 'C'
         break
-    symbol = race_route[coordinate(order)[0]][coordinate(order)[1]]
-    if symbol == '.':
+    car_row, car_col = coordinate(order, car_row, car_col)
+    if race_route[car_row][car_col] == '.':
         distance += 10
-    elif symbol == 'T':
-        symbol = '.'
+    elif race_route[car_row][car_col] == 'T':
+        race_route[car_row][car_col] = '.'
         distance += 30
-        tunel(race_route, n)
-    elif symbol == 'F':
+        car_row, car_col = tunel(race_route, n)
+    elif race_route[car_row][car_col] == 'F':
         distance += 10
+        race_route[car_row][car_col] = 'C'
         break
 
-print()
+if end:
+    print(f"Racing car {car_number} DNF.")
+else:
+    print(f"Racing car {car_number} finished the stage!")
 
-
-
-
-
+print(f"Distance covered {distance} km.")
+for line in race_route:
+    print(''.join(map(str, line)))
