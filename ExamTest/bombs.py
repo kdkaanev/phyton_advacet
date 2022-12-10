@@ -32,7 +32,7 @@ while True:
             break
     else:
         bomb_effects.appendleft(eff)
-        if cas > 5:
+        if cas >= 5:
             bomb_casing.append(cas - 5)
 bombs = []
 for key, value in bomb.items():
@@ -41,15 +41,12 @@ for key, value in bomb.items():
 if not bomb_effects:
     print('Bomb Effects: empty')
 else:
-    print(f'Bomb Effects: {[str(x) for x in bomb_effects]}')
+    print(f'Bomb Effects: {", ".join([str(x) for x in bomb_effects])}')
 
 if not bomb_casing:
     print('Bomb Casings: empty')
 else:
-    print(f'Bomb Casings: {[str(x) for x in bomb_effects]}')
+    print(f'Bomb Casings: {", ".join([str(x) for x in bomb_casing])}')
 
 for bomb in sorted(bombs):
     print(bomb)
-
-
-
