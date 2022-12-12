@@ -12,7 +12,7 @@ def set_position(n):
 
 def check_out(poss, n):
     r, c = poss
-    return 0 <= r <= n and 0 <= c <= n
+    return 0 <= r < n and 0 <= c < n
 
 
 def check_burrow(s, a):
@@ -35,7 +35,7 @@ def move(com, poss):
 
 while True:
     if food_quantity >= 10:
-        print('You won! Ypu fed the snake')
+        print('You won! You fed the snake.')
         break
 
     command = input()
@@ -43,6 +43,8 @@ while True:
     state = move(command, initial_coordinate)
     r, c = state
     if not check_out(state, n):
+        r, c = initial_coordinate
+        area[r][c] = '.'
         print('Game over!')
         break
     if check_burrow(state, area):
@@ -60,7 +62,6 @@ while True:
 
     area[state[0]][state[1]] = 'S'
     area[initial_coordinate[0]][initial_coordinate[1]] = '.'
-print()
-
-
-
+print(f"Food eaten: {food_quantity}")
+for line in area:
+    print(''.join(line))
